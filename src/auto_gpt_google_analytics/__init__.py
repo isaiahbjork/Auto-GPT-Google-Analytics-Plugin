@@ -1,5 +1,5 @@
 """This is a plugin to use Auto-GPT with MetaTrader."""
-from typing import Any, Dict, List, Optional, Tuple, TypeVar, TypedDict, Union
+from typing import Any, Dict, List, Optional, Tuple, TypeVar    , TypedDict, Union
 from auto_gpt_plugin_template import AutoGPTPluginTemplate
 
 # Google Analytics
@@ -11,7 +11,7 @@ c = GAClient()
 PromptGenerator = TypeVar("PromptGenerator")
 
 os.getenv('GOOGLE_APPLICATION_CREDENTIALS')
-view_id = os.environ('GOOGLE_ANALYTICS_VIEW_ID')
+view_id = os.getenv('GOOGLE_ANALYTICS_VIEW_ID')
 
 
 class Message(TypedDict):
