@@ -233,16 +233,12 @@ class AutoGPTGoogleAnalyticsPlugin(AutoGPTPluginTemplate):
             }
         }
 
-        try:
-            # Get the GA data
-            response = c.get_all_data(request_body)
-            data = response['data']
-
-            # Aggregate the metric values
-            total = data['data'][metric].astype(int).sum()
-            return total
-        except Exception as e:
-            return f'An error occurred: {str(e)}'
+        response = c.get_all_data(request_body)
+        data = response['data']['pageviews'].astype(int).sum()
+        if isinstance(data, int):
+            return data
+        else:
+            return f'Error: fetching google analytics data'
 
     def get_metrics_from_file(self):
         try:
