@@ -261,7 +261,7 @@ class AutoGPTGoogleAnalyticsPlugin(AutoGPTPluginTemplate):
             print(f"Error checking metric: {str(e)}")
             return f"Error checking metric: {str(e)}"
     
-    def get_date_in_past(days: int) -> str:
+    def get_date_in_past(self, days: int) -> str:
         try:
             # Calculate the date in the past
             past_date = datetime.now() - timedelta(days=days)
