@@ -7,6 +7,7 @@ The AutoGPT Google Analytics Plugin is a software tool that allows you to connec
 
 ## 💡 Key Features:
 - 📊 **Get Website Analytics**
+- ⏰ **Get Date In The Past**
 
 ## 🔧 Installation
 

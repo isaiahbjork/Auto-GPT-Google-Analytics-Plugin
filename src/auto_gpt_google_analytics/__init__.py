@@ -37,8 +37,8 @@ class AutoGPTGoogleAnalyticsPlugin(AutoGPTPluginTemplate):
             "google_analytics",
             {
                 "metric": "<metric>",
-                "start_date": "<start_date>",
-                "end_date": "<end_date>"
+                "date_in_past": "<date_in_past>",
+                "date_in_future": "<date_in_future>"
             },
             self.google_analytics
         ),
@@ -217,19 +217,19 @@ class AutoGPTGoogleAnalyticsPlugin(AutoGPTPluginTemplate):
         """
         pass
 
-    def google_analytics(self, metric: str, start_date: str, end_date: str) -> Union[int, str]:
-        metric = f'ga:{metric}'
+    def google_analytics(self, metric: str, date_in_past: str, date_in_future: str) -> Union[int, str]:
+        ga_metric = f'ga:{metric}'
         # Build the request body
         request_body = {
             'view_id': view_id,  # Replace with your Google Analytics view ID
-            'start_date': start_date,
-            'end_date': end_date,
+            'start_date': date_in_past,
+            'end_date': date_in_future,
             'dimensions': {
                 'ga:sourceMedium',
                 'ga:date'
             },
             'metrics': {
-                metric
+                ga_metric
             }
         }
 
@@ -268,11 +268,22 @@ class AutoGPTGoogleAnalyticsPlugin(AutoGPTPluginTemplate):
 
     def get_date_in_past(self, days: int) -> str:
         try:
+            days = int(days)
             # Calculate the date in the past
             past_date = datetime.now() - timedelta(days=days)
-
             # Format the date as "YYYY-MM-DD"
             formatted_date = past_date.strftime("%Y-%m-%d")
             return formatted_date
         except ValueError:
             return "Invalid input, please enter a positive integer."
+        
+    def get_future_date(self, days: int) -> str:
+        if days == 0:
+            return datetime.today().strftime('%Y-%m-%d')
+        
+        try:
+            past_date = datetime.today() + timedelta(days=days)
+            future_date = past_date.strftime('%Y-%m-%d')
+            return future_date
+        except ValueError:
+            return "Invalid input. Please enter a valid number of days."
