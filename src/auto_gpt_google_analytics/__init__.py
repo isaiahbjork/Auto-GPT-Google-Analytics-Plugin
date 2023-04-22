@@ -272,6 +272,7 @@ class AutoGPTGoogleAnalyticsPlugin(AutoGPTPluginTemplate):
             return "Invalid input, please enter a positive integer."
         
     def get_future_date(self, days: int) -> str:
+        days = int(days)
         if days == 0:
             return datetime.today().strftime('%Y-%m-%d')
         
