@@ -7,7 +7,7 @@ The AutoGPT Google Analytics Plugin is a software tool that allows you to connec
 
 ## 💡 Key Features:
 - 📊 **Get Website Analytics**
-- ⏰ **Get Date In The Past**
+- ⏰ **Get Past/Future Date**
 
 ## 🔧 Installation
 
@@ -81,5 +81,20 @@ ALLOWLISTED_PLUGINS=AutoGPTGoogleAnalyticsPlugin
 Experience the plugin's capabilities by getting your website analytics.
 
 - Use this format for dates YYYY-MM-DD
+
+1. **Configure Auto-GPT:**
+   Set up Auto-GPT with the following parameters:
+   - Name: `AnalyticsGPT`
+   - Role: `Web Analytics Expert`
+   - Goals:
+     1. Goal 1: `Get pageviews for the past 30 days`
+     2. Goal 2: `Terminate`
+
+2. **Run Auto-GPT:**
+   Launch Auto-GPT, which should use the Google Analytics plugin.
+
+
+3. **Sample response:**
+<img width="1063" alt="auto-gpt-email-plugin" src="https://i.ibb.co/ScRR4tv/Screen-Shot-2023-04-22-at-4-10-10-PM.png">
 
 
