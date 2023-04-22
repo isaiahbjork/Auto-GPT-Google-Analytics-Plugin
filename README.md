@@ -79,4 +79,6 @@ ALLOWLISTED_PLUGINS=AutoGPTGoogleAnalyticsPlugin
 
 Experience the plugin's capabilities by getting your website analytics.
 
+- Use this format for dates YYYY-MM-DD
+
 

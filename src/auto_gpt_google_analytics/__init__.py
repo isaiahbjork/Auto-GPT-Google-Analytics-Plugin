@@ -5,6 +5,7 @@ from auto_gpt_plugin_template import AutoGPTPluginTemplate
 # Google Analytics
 import os
 from gaapi4py import GAClient
+from datetime import datetime, timedelta
 
 c = GAClient()
 
@@ -39,7 +40,12 @@ class AutoGPTGoogleAnalyticsPlugin(AutoGPTPluginTemplate):
                 "start_date": "<start_date>",
                 "end_date": "<end_date>"
             },
-            self.google_analytics
+            "Get Formatted End Date",
+            "get_date_in_past",
+            {
+                "days": "<days>"
+            },
+            self.get_date_in_past
         ),
         return prompt
 
@@ -254,3 +260,14 @@ class AutoGPTGoogleAnalyticsPlugin(AutoGPTPluginTemplate):
         except Exception as e:
             print(f"Error checking metric: {str(e)}")
             return f"Error checking metric: {str(e)}"
+    
+    def get_date_in_past(days: int) -> str:
+        try:
+            # Calculate the date in the past
+            past_date = datetime.now() - timedelta(days=days)
+
+            # Format the date as "YYYY-MM-DD"
+            formatted_date = past_date.strftime("%Y-%m-%d")
+            return formatted_date
+        except ValueError:
+            return "Invalid input, please enter a positive integer."
