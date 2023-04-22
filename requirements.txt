@@ -7,3 +7,5 @@ wheel
 setuptools
 build
 twine
+gaapi4py
+auto-gpt-plugin-template
