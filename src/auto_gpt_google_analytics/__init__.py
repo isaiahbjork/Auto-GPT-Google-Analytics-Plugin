@@ -1,5 +1,5 @@
 """This is a plugin to use Auto-GPT with Google Analytics."""
-from typing import Any, Dict, List, Optional, Tuple, TypeVar    , TypedDict, Union
+from typing import Any, Dict, List, Optional, Tuple, TypeVar, TypedDict, Union
 from auto_gpt_plugin_template import AutoGPTPluginTemplate
 
 # Google Analytics
@@ -42,10 +42,8 @@ class AutoGPTGoogleAnalyticsPlugin(AutoGPTPluginTemplate):
             },
             self.google_analytics
         ),
-        
+
         prompt.add_command(
-            "Get Website Analytics",
-            
             "Get Formatted End Date",
             "get_date_in_past",
             {
@@ -53,7 +51,7 @@ class AutoGPTGoogleAnalyticsPlugin(AutoGPTPluginTemplate):
             },
             self.get_date_in_past
         )
-        
+
         return prompt
 
     def can_handle_post_prompt(self) -> bool:
@@ -267,7 +265,7 @@ class AutoGPTGoogleAnalyticsPlugin(AutoGPTPluginTemplate):
         except Exception as e:
             print(f"Error checking metric: {str(e)}")
             return f"Error checking metric: {str(e)}"
-    
+
     def get_date_in_past(self, days: int) -> str:
         try:
             # Calculate the date in the past
