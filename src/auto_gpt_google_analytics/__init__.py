@@ -1,4 +1,4 @@
-"""This is a plugin to use Auto-GPT with MetaTrader."""
+"""This is a plugin to use Auto-GPT with Google Analytics."""
 from typing import Any, Dict, List, Optional, Tuple, TypeVar    , TypedDict, Union
 from auto_gpt_plugin_template import AutoGPTPluginTemplate
 
