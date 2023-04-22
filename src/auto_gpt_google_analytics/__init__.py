@@ -40,13 +40,20 @@ class AutoGPTGoogleAnalyticsPlugin(AutoGPTPluginTemplate):
                 "start_date": "<start_date>",
                 "end_date": "<end_date>"
             },
+            self.google_analytics
+        ),
+        
+        prompt.add_command(
+            "Get Website Analytics",
+            
             "Get Formatted End Date",
             "get_date_in_past",
             {
                 "days": "<days>"
             },
             self.get_date_in_past
-        ),
+        )
+        
         return prompt
 
     def can_handle_post_prompt(self) -> bool:
