@@ -241,8 +241,6 @@ class AutoGPTGoogleAnalyticsPlugin(AutoGPTPluginTemplate):
             # Aggregate the metric values
             total = data['data'][metric].astype(int).sum()
             return total
-        except KeyError:
-            return f'{metric} is not a valid metric.'
         except Exception as e:
             return f'An error occurred: {str(e)}'
 
