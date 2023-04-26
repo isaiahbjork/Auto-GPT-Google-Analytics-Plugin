@@ -61,9 +61,9 @@ Append the following configuration settings to the end of the file:
 GOOGLE_APPLICATION_CREDENTIALS=
 GOOGLE_ANALYTICS_VIEW_ID=
 ```
-- Create a Google service account.
-- Add the email address to your Google Analytics (Admin -> View Access Management).
-- Add service account json file to Auto-GPT.
+- Go to Google Cloud, enable the Google Analytics Reporting API, credentials > keys > Add Key > Create New Key > JSON, add this to the auto-gpt and rename it firebase.json.
+- Add the email address in the JSON to your Google Analytics (Admin -> View Access Management).
+
 
 ### 10. Allowlist Plugin
 In your `.env` search for `ALLOWLISTED_PLUGINS` and add this Plugin:
