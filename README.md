@@ -58,7 +58,7 @@ Append the following configuration settings to the end of the file:
 ################################################################################
 ### GOOGLE ANALYTICS
 ################################################################################
-GOOGLE_APPLICATION_CREDENTIALS=
+GOOGLE_APPLICATION_CREDENTIALS=firebase.json
 GOOGLE_ANALYTICS_VIEW_ID=
 ```
 - Go to Google Cloud, enable the Google Analytics Reporting API, credentials > keys > Add Key > Create New Key > JSON, add this to the auto-gpt and rename it firebase.json.
